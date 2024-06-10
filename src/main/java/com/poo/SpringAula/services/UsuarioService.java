@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.poo.SpringAula.model.Cidade;
 import com.poo.SpringAula.model.Usuario;
 import com.poo.SpringAula.repository.UsuarioRepository;
 
@@ -33,5 +34,11 @@ public class UsuarioService {
 	public List<Usuario> listaTodosUsuarios(){
 		return repository.findAll();
 	}
+	
+	public List<Usuario> listaPorCidade(Cidade c){
+		return repository.findByCidade(c);
+	}
+	
+	
 
 }
